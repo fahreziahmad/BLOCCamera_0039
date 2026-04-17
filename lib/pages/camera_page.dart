@@ -118,3 +118,14 @@ class _CameraPageState extends State<CameraPage> {
     );
   }
 }
+
+class _MediaSizeClipper extends CustomClipper<Rect> {
+  final Size size;
+  _MediaSizeClipper(this.size);
+
+  @override
+  Rect getClip(Size size) => Rect.fromLTWH(0, 0, size.width, size.height);
+
+  @override
+  bool shouldRelink(CustomClipper<Rect> oldClipper) => true;
+}
